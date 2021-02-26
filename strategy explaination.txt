@@ -1,0 +1,20 @@
+  
+Main Strategy:
+We mainly write four functions : 
+Shift : operate our bot to any given point.
+Earn_point : call solver function to earn bytecoins
+Scan : use scanner with a given angle and get information back
+Return : Deal with respawn interrupt
+We first notice that 4x4 squares don't have obstacles in the four corners, and hence design a fix path to prevent our 
+bot from hitting the walls. We divide the whole maps into four parts and each part contains four host. Using the shift funtion 
+we write, our bot can accurately get the location of all the hosts in each part. As a "Friendly Host Pirate", our bot will not deliberately shoot
+the opponents except they block on our way to get host. 
+
+One problem we face is how to resolve respawn interrupt. To keep our bot working normally after respawn, all the regular shift steps
+have a fix speed of 10. Once our bot ger shooted, its speed will be set to -1 which can be immediately recogonize by our shift dunction. Then
+shift function will call return function to shift the bot back to normal path according to the current location.
+
+Group task distribution：
+Fan :   Complete shift and normal four parts movement functions
+Zheyu : Resolve bonk and respawn interrupt
+Zihan : Improve scan and earn point functions 
