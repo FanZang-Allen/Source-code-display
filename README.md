@@ -1,3 +1,2 @@
 # Source-code-display
-
-# Data structure and AI project
+Data structure and AI project
